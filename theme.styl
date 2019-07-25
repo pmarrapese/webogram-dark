@@ -1,0 +1,356 @@
+/* No vendor expansion of @keyframes */
+vendors = official
+
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlC2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+FONT_FAMILY = 'Source Sans Pro'
+FONT_SIZE = 14px
+FONT_SIZE_MESSAGE_AUTHOR = 14px
+COLOR_BG = #383838
+COLOR_BG_DARK = darken(COLOR_BG, 5)
+COLOR_BG_DARKER = darken(COLOR_BG, 10)
+COLOR_BG_LIGHT = lighten(COLOR_BG, 5)
+COLOR_BG_LIGHTER = lighten(COLOR_BG, 20)
+color_BG_HIGHLIGHT = #ffee8d
+COLOR_TEXT = #fff
+COLOR_TEXT_DARK = darken(COLOR_TEXT, 20)
+COLOR_PRIMARY = #8dceff
+COLOR_PRIMARY_LIGHT = lighten(COLOR_PRIMARY, 10)
+COLOR_SECONDARY = #ff988d
+COLOR_TERTIARY = #ffd18d
+COLOR_INPUT_BG = COLOR_BG_DARK
+COLOR_BUTTON_PRIMARY = COLOR_BG_DARK
+COLOR_BUTTON_PRIMARY_HOVER = COLOR_BG_LIGHT
+COLOR_BUTTON_SECONDARY = COLOR_BG_DARKER
+COLOR_BUTTON_SECONDARY_HOVER = COLOR_BG_LIGHTER
+WIDTH_APP = 100%
+WIDTH_SIDEBAR_COLUMN = 20%
+WIDTH_MESSAGES_COLUMN = 80%
+WIDTH_FULL = 100%
+SQUARE_AVATAR = 32px
+ZOOM_MEDIA = 1
+
+/* Global */
+html
+  background COLOR_BG_DARK
+    
+body
+  font-family FONT_FAMILY, Tahoma, sans-serif, Arial, Helvetica
+  font-size FONT_SIZE
+  color COLOR_TEXT
+
+  a
+    color COLOR_PRIMARY
+
+  h1, h2, h3, h4, h5
+    color COLOR_TEXT
+
+  .tg_checkbox
+    color COLOR_TEXT
+
+  .btn.btn-primary,
+  .btn.btn-md-primary
+    background COLOR_BUTTON_PRIMARY
+    color COLOR_TEXT
+    &:hover
+      background COLOR_BUTTON_PRIMARY_HOVER
+
+    .im_selected_count
+      color COLOR_TEXT_DARK
+
+  .btn
+    color: COLOR_TEXT
+    &:hover
+      background COLOR_BUTTON_SECONDARY_HOVER
+
+  input[type='text'],
+  textarea,
+  .md-input,
+  .form-control
+    color COLOR_TEXT
+    background COLOR_INPUT_BG
+    border none
+
+  .md-input-group
+    border none
+    
+  .md_simple_form_description
+    color COLOR_TEXT
+
+  /* Misc. one-shot styles */
+  .session_active_date_online
+    color COLOR_TEXT
+
+/* Login */
+.login_head_bg
+  background COLOR_BG_DARK
+  
+.login_page
+  .login_form_wrap
+    background COLOR_BG_LIGHT
+    
+    .login_form_lead
+      color COLOR_TEXT
+  
+.login_footer_wrap
+  color COLOR_TEXT
+
+/* Countries (part of login) */
+.countries_scrollable_wrap
+  a.countries_modal_country:hover
+    background COLOR_BG_LIGHTER
+
+/* Header */
+.tg_head_split
+  background COLOR_BG_LIGHT
+  max-width WIDTH_APP
+
+  .tg_head_logo_wrap
+    width WIDTH_SIDEBAR_COLUMN
+
+  .tg_head_main_wrap
+    width auto
+    float none
+
+  .tg_head_btn
+    color COLOR_TEXT
+    background COLOR_BUTTON_PRIMARY
+    &.tg_head_btn:hover
+      background COLOR_BUTTON_PRIMARY_HOVER
+
+  .tg_head_logo_dropdown,
+  .tg_head_peer_dropdown
+    .dropdown-menu
+      background COLOR_BG_LIGHT
+
+      li a
+        color COLOR_TEXT
+        &:hover
+          background COLOR_BG_LIGHTER
+
+
+/* Inner content */
+.im_page_wrap
+  background COLOR_BG
+  color COLOR_TEXT
+  max-width WIDTH_APP
+  border none
+
+  /* Sidebar */
+  .im_dialogs_col_wrap
+    border 1px solid COLOR_BG_LIGHT
+    width WIDTH_SIDEBAR_COLUMN
+
+    .im_dialogs_search_field
+      color COLOR_TEXT
+      background COLOR_INPUT_BG
+      border-color none
+
+    .im_dialogs_scrollable_wrap
+      .im_dialog_searchpeer
+        background COLOR_INPUT_BG
+
+/* Nav pills (sidebar and recipient modal) */
+.im_dialog_wrap
+  &.active
+    .im_dialog
+      background COLOR_BUTTON_PRIMARY
+
+  .im_dialog
+    line-height 1.2em
+
+    &:hover
+      background COLOR_BUTTON_PRIMARY_HOVER
+
+    .im_dialog_message_wrap
+      height auto
+
+    .im_dialog_peer           /* Dialog name */
+      color COLOR_TEXT
+
+    .im_dialog_chat_from_wrap /* Message preview (sender) */
+      color COLOR_PRIMARY
+
+    .im_short_message_text    /* Message preview (message) */
+      color COLOR_TEXT_DARK
+
+    .im_short_message_media,  /* Message preview (media/typing) */
+    .im_short_message_service
+      color COLOR_PRIMARY
+
+    .im_dialog_badge
+      color COLOR_BG
+      background COLOR_TERTIARY
+
+      &.im_dialog_badge_muted
+        background COLOR_BG_LIGHTER
+
+    .im_dialog_unread
+      background COLOR_PRIMARY_LIGHT
+
+    .im_dialog_photo
+      width SQUARE_AVATAR
+      height SQUARE_AVATAR
+
+    .peer_initials
+      line-height SQUARE_AVATAR
+
+/* Messages */
+@keyframes im_message_focus_fade
+  from
+    background-color alpha(COLOR_BG_DARK, 1)
+  to
+    background-color alpha(COLOR_BG_DARK, 0)
+
+.im_history_col_wrap
+  width WIDTH_MESSAGES_COLUMN
+
+  .im_history
+    &.im_history_select_active
+      .im_message_outer_wrap:hover,
+      .im_history_message_wrap.im_message_selected .im_message_outer_wrap     /* Highlight from selection */
+        background COLOR_BG_DARK
+
+    .im_history_message_wrap
+      &.im_grouped_short .im_content_message_wrap
+        margin 2px auto 2px auto
+      .im_content_message_wrap
+        margin 3px auto 3px auto
+
+    .im_service_message
+      color COLOR_TEXT_DARK
+
+    .im_message_unread_split
+      background COLOR_BG_DARK
+      color COLOR_TEXT
+
+    .im_message_wrap
+      max-width WIDTH_FULL
+
+      .im_message_body
+        margin-left 48px
+        
+        .im_message_text
+          .im_message_mymention
+            background COLOR_BG_HIGHLIGHT
+            color COLOR_BG_DARKER
+            padding 1px 2px
+        
+        .im_message_author_wrap
+          .im_message_author,
+          .im_message_fwd_author
+            color COLOR_PRIMARY
+            font-size FONT_SIZE_MESSAGE_AUTHOR
+
+        .im_message_reply_wrap
+          .im_message_reply_border
+            background COLOR_BG_LIGHTER
+
+          .im_message_reply_author
+            color COLOR_PRIMARY_LIGHT
+
+          .im_message_reply_body
+            color COLOR_TEXT_DARK
+            
+        .im_message_media
+          .im_message_photo_thumb,
+          .img_gif_image_wrap,
+          .im_message_document_thumb_wrap,
+          div[ng-switch-when="sticker"]
+            zoom ZOOM_MEDIA
+            
+            &:hover
+              zoom 1
+
+      .im_message_file_button
+        background COLOR_BUTTON_SECONDARY
+        &:hover
+          background COLOR_BUTTON_SECONDARY_HOVER
+
+      .audio_player_title
+        color COLOR_PRIMARY_LIGHT
+
+      .icon-message-status
+        background COLOR_PRIMARY_LIGHT
+
+      .im_message_from_photo
+        width SQUARE_AVATAR
+        height SQUARE_AVATAR
+
+      .peer_initials
+        line-height SQUARE_AVATAR
+
+.im_edit_panel_border
+    border-bottom-color COLOR_BG_LIGHT
+
+  /* Send panel */
+  .im_send_panel_wrap
+    max-width WIDTH_FULL
+    margin auto 0 auto 0
+
+    .im_send_form
+      max-width WIDTH_FULL
+
+      .composer_rich_textarea
+        background COLOR_INPUT_BG
+        box-shadow none
+
+      .im_record
+        background COLOR_BUTTON_SECONDARY
+        &:hover
+          background COLOR_BUTTON_SECONDARY_HOVER
+
+      .im_submit_send_label
+        COLOR COLOR_PRIMARY
+
+      .im_message_reply_wrap
+        .im_message_reply_border
+          background COLOR_BG_LIGHTER
+
+        .im_message_reply_author
+          color COLOR_PRIMARY_LIGHT
+
+        .im_message_reply_body
+          color COLOR_TEXT_DARK
+
+/* Modals */
+.modal
+  .md_modal_head
+    background COLOR_BG_LIGHT
+
+    .peer_modal_profile_description
+      color COLOR_TEXT
+
+  .md_modal_body,
+  .modal-content
+    color COLOR_TEXT
+    background COLOR_BG
+
+    .md_modal_split_action
+      background COLOR_BUTTON_PRIMARY
+
+/* Emoji menu */
+.composer_emoji_tooltip
+  margin-left -260px
+
+  .composer_emoji_tooltip_tail
+    left 271px
+
+/* Footer */
+.footer_wrap
+  display none
