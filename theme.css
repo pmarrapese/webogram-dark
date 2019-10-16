@@ -39,16 +39,19 @@ body .tg_checkbox {
   color: #fff;
 }
 body .btn.btn-primary,
-body .btn.btn-md-primary {
+body .btn.btn-md-primary,
+body .btn.reply_markup_button {
   background: #2b2b2b;
   color: #fff;
 }
 body .btn.btn-primary:hover,
-body .btn.btn-md-primary:hover {
+body .btn.btn-md-primary:hover,
+body .btn.reply_markup_button:hover {
   background: #454545;
 }
 body .btn.btn-primary .im_selected_count,
-body .btn.btn-md-primary .im_selected_count {
+body .btn.btn-md-primary .im_selected_count,
+body .btn.reply_markup_button .im_selected_count {
   color: #ccc;
 }
 body .btn {
@@ -199,8 +202,11 @@ body .session_active_date_online {
 .im_history_col_wrap .im_history .im_history_message_wrap .im_content_message_wrap {
   margin: 3px auto 3px auto;
 }
-.im_history_col_wrap .im_history .im_service_message {
+.im_history_col_wrap .im_history .im_service_message_wrap .im_service_message {
   color: #ccc;
+}
+.im_history_col_wrap .im_history .im_service_message_wrap .im_bot_intro_message_wrap {
+  color: #fff;
 }
 .im_history_col_wrap .im_history .im_message_unread_split {
   background: #2b2b2b;
